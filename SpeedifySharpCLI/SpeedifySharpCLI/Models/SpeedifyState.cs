@@ -7,8 +7,9 @@ public class SpeedifyState
 {
     public static SpeedifyState Parse(string json)
     {
-        //json = json.Replace("[\"state\",", "") + "}";
         json = json.Replace("[\"state\",", "");
+        json = json.TrimEnd('\r');
+        json = json.TrimEnd(']');
 
         return JsonSerializer.Deserialize<SpeedifyState>(json)!;
     }

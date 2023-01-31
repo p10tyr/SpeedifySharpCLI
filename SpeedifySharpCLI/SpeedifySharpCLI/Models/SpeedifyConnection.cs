@@ -7,8 +7,6 @@ public class SpeedifyConnection
 {
     public static SpeedifyConnection Parse(string json)
     {
-        json += "]";
-
         var objectList = JsonSerializer.Deserialize<List<object>>(json)!;
 
         if (objectList.Count < 2)

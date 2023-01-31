@@ -1,41 +1,39 @@
 ﻿using SpeedifySharpCLI.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Text.RegularExpressions;
 
-namespace SpeedifySharpCLI.Core
+namespace SpeedifySharpCLI.Core;
+
+public class StateEngine
 {
-    public class StateEngine
+    public SpeedifyAdapters SpeedifyAdapters { get; set; } = new();
+    public SpeedifyConnection SpeedifyConnection { get; set; } = new();
+    public SpeedifySession SpeedifySession { get; set; } = new();
+    public SpeedifyState SpeedifyState { get; set; } = new();
+
+    public virtual void ReticulateSplines(string stateJson)
     {
-        public SpeedifyConnection SpeedifyConnection { get; set; } = new();
-        public SpeedifySession SpeedifySession { get; set; } = new();
-        public SpeedifyState SpeedifyState { get; set; } = new();
+        var matches = Regex.Matches(stateJson, @"\[""(.*?)\]\r", RegexOptions.Singleline);
 
-        public virtual void ReticulateSplines(string stateJson)
+        for (int i = 0; i < matches.Count; i++)
         {
+            var s = matches[i].ToString();
 
-            //var states = stateJson.Split("}]");
-            var states = stateJson.Split("]\r\n\r\n");
-            //states = states.Select(s => s += "]").ToArray();
-
-            foreach (var s in states)
+            if (s.StartsWith("[\"state\""))
             {
-                if (s.StartsWith("[\"state\""))
-                {
-                    SpeedifyState = SpeedifyState.Parse(s);
-                }
-                if (s.StartsWith("[\"session_stats\""))
-                {
-                    SpeedifySession = SpeedifySession.Parse(s);
-                }
-                if (s.StartsWith("[\"connection_stats\""))
-                {
-                    SpeedifyConnection = SpeedifyConnection.Parse(s);
-                }
+                SpeedifyState = SpeedifyState.Parse(s);
             }
-
+            if (s.StartsWith("[\"session_stats\""))
+            {
+                SpeedifySession = SpeedifySession.Parse(s);
+            }
+            if (s.StartsWith("[\"connection_stats\""))
+            {
+                SpeedifyConnection = SpeedifyConnection.Parse(s);
+            }
+            if (s.StartsWith("[\"adapters\""))
+            {
+                SpeedifyAdapters = SpeedifyAdapters.Parse(s);
+            }
         }
     }
 }

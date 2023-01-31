@@ -9,8 +9,6 @@ public class SpeedifySession
 {
     public static SpeedifySession Parse(string json)
     {
-        json += "]";
-
         var objectList = JsonSerializer.Deserialize<List<object>>(json)!;
 
         if (objectList.Count < 2)
