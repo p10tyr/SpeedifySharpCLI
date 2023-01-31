@@ -8,7 +8,7 @@
 		<Authors>Piotr Kula</Authors>
 		<Description>An An open source C# wrapper package for Speedify CLI</Description>
 		<PackageTags>speedify</PackageTags>
-		<PackageLicenseExpression>BSD3</PackageLicenseExpression>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
 
 
