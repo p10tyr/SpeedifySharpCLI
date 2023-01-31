@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedifySharpCLI", "SpeedifySharpCLI\SpeedifySharpCLI.csproj", "{B1EFC2B2-41AA-4955-BF46-A7E882912026}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpeedifySharpCLI", "SpeedifySharpCLI\SpeedifySharpCLI.csproj", "{B1EFC2B2-41AA-4955-BF46-A7E882912026}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpeedifySharpCLI.WorkerService", "SpeedifySharpCLI.WorkerService\SpeedifySharpCLI.WorkerService.csproj", "{D26BCCC7-3F6E-4C48-9A4C-D17227D490F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpeedifySharpCLI.WorkerService", "SpeedifySharpCLI.WorkerService\SpeedifySharpCLI.WorkerService.csproj", "{D26BCCC7-3F6E-4C48-9A4C-D17227D490F1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
