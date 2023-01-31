@@ -9,6 +9,7 @@
 		<Description>An An open source C# wrapper package for Speedify CLI</Description>
 		<PackageTags>speedify</PackageTags>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 
