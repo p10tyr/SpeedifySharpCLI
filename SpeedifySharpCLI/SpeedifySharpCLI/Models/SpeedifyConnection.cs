@@ -7,7 +7,7 @@ public class SpeedifyConnection
 {
     public static SpeedifyConnection Parse(string json)
     {
-        json += "}]";
+        json += "]";
 
         var objectList = JsonSerializer.Deserialize<List<object>>(json)!;
 

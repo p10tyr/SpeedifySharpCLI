@@ -9,7 +9,7 @@ public class SpeedifySession
 {
     public static SpeedifySession Parse(string json)
     {
-        json += "}]";
+        json += "]";
 
         var objectList = JsonSerializer.Deserialize<List<object>>(json)!;
 
