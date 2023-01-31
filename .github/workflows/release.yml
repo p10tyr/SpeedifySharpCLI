@@ -19,8 +19,8 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Build
-      run: dotnet build -c Release ./SpeedifySharpCLI/SpeedifySharpCLI.sln
+      run: dotnet build -c Release ./SpeedifySharpCLI/SpeedifySharpCLI/SpeedifySharpCLI.csproj
     - name: Pack nugets
-      run: dotnet pack -c Release --no-build --output . ./SpeedifySharpCLI/SpeedifySharpCLI.sln
+      run: dotnet pack -c Release --no-build --output . ./SpeedifySharpCLI/SpeedifySharpCLI/SpeedifySharpCLI.csproj
     - name: Push to NuGet
       run: dotnet nuget push "*.nupkg" --api-key ${{secrets.nugetapi}} --source https://api.nuget.org/v3/index.json
