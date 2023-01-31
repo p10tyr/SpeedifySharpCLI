@@ -8,6 +8,8 @@ This package requires you to provide the path to speedifyCLI and
 
 > SourceLink has been enabled. You should be able to see all the source code and debug within your application! MS 💖 YOU!
 
+Remember to enable NuGet.org symbols and Disable "Just my Code" 
+
 ## How to use?
 
 Register a singleton of SpeedifySharp is you want to use it in your DI

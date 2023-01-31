@@ -35,10 +35,10 @@ public class SpeedifySession
 public class SpeedifySessionStats
 {
     [JsonPropertyName("bytesReceived")]
-    public int bytesReceived { get; set; }
+    public long bytesReceived { get; set; }
 
     [JsonPropertyName("bytesSent")]
-    public int bytesSent { get; set; }
+    public long bytesSent { get; set; }
 
     [JsonPropertyName("captivePortal")]
     public CaptivePortal captivePortal { get; set; } = new();
@@ -47,10 +47,10 @@ public class SpeedifySessionStats
     public int daysSinceFirst { get; set; }
 
     [JsonPropertyName("encryptedBytesReceived")]
-    public int encryptedBytesReceived { get; set; }
+    public long encryptedBytesReceived { get; set; }
 
     [JsonPropertyName("encryptedBytesSent")]
-    public int encryptedBytesSent { get; set; }
+    public long encryptedBytesSent { get; set; }
 
     [JsonPropertyName("maxDownloadSpeed")]
     public double maxDownloadSpeed { get; set; }
@@ -77,7 +77,7 @@ public class SpeedifySessionStats
     public int periodStartTime { get; set; }
 
     [JsonPropertyName("retransBytes")]
-    public int retransBytes { get; set; }
+    public long retransBytes { get; set; }
 
     [JsonPropertyName("streaming")]
     public Streaming streaming { get; set; } = new();
@@ -101,16 +101,16 @@ public class SpeedifySessionStats
     public class PacketHandler
     {
         [JsonPropertyName("bytesIn")]
-        public int bytesIn { get; set; }
+        public long bytesIn { get; set; }
 
         [JsonPropertyName("bytesOut")]
-        public int bytesOut { get; set; }
+        public long bytesOut { get; set; }
 
         [JsonPropertyName("packetsIn")]
-        public int packetsIn { get; set; }
+        public long packetsIn { get; set; }
 
         [JsonPropertyName("packetsOut")]
-        public int packetsOut { get; set; }
+        public long packetsOut { get; set; }
 
         [JsonPropertyName("retries")]
         public int retries { get; set; }
@@ -142,10 +142,10 @@ public class SpeedifySessionStats
         public int bufferWaits { get; set; }
 
         [JsonPropertyName("bytesIn")]
-        public int bytesIn { get; set; }
+        public long bytesIn { get; set; }
 
         [JsonPropertyName("bytesOut")]
-        public int bytesOut { get; set; }
+        public long bytesOut { get; set; }
 
         [JsonPropertyName("droppedIncoming")]
         public int droppedIncoming { get; set; }
