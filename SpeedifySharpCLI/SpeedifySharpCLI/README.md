@@ -6,6 +6,8 @@ This package requires you to provide the path to speedifyCLI and
 - will capture the output and try to parse the json results to strongly typed objects
 - will support commands (soon?)
 
+> SourceLink has been enabled. You should be able to see all the source code and debug within your application! MS 💖 YOU!
+
 ## How to use?
 
 Register a singleton of SpeedifySharp is you want to use it in your DI
