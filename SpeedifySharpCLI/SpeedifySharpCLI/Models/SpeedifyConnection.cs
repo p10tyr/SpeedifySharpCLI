@@ -75,7 +75,7 @@ public class SpeedifyConnectionStats
     public string Protocol { get; set; } = string.Empty;
 
     [JsonPropertyName("receiveBps")]
-    public int ReceiveBps { get; set; }
+    public double ReceiveBps { get; set; }
 
     [JsonPropertyName("receiveEstimateMbps")]
     public double ReceiveEstimateMbps { get; set; }
@@ -84,7 +84,7 @@ public class SpeedifyConnectionStats
     public string RemoteIp { get; set; } = string.Empty;
 
     [JsonPropertyName("sendBps")]
-    public int SendBps { get; set; }
+    public double SendBps { get; set; }
 
     [JsonPropertyName("sendEstimateMbps")]
     public double SendEstimateMbps { get; set; }
@@ -93,6 +93,6 @@ public class SpeedifyConnectionStats
     public bool Sleeping { get; set; }
 
     [JsonPropertyName("totalBps")]
-    public int TotalBps { get; set; }
+    public double TotalBps { get; set; }
 
 }

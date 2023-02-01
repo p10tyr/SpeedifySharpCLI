@@ -33,12 +33,12 @@ namespace SpeedifySharpCLI.WorkerService
                 {
                     Console.WriteLine($"");
                     Console.WriteLine($"Connection: {c.ConnectionID} {c.PrivateIp} -> {c.LocalIp} ==> {c.RemoteIp}");
-                    Console.WriteLine($"Download: {c.ReceiveEstimateMbps}Mbps");
-                    Console.WriteLine($"Upload: {c.SendEstimateMbps}Mpbs");
+                    Console.WriteLine($"Download: { c.ReceiveBps / 125000 / 8} Mbps");
+                    Console.WriteLine($"Upload: {c.SendBps / 125000 / 8} Mpbs");
                     Console.WriteLine($"Jitter: {c.JitterMs} Latency: {c.LatencyMs} Protocol: {c.Protocol}");
                 }
 
-                await Task.Delay(5000, stoppingToken);
+                await Task.Delay(1200, stoppingToken);
             }
         }
     }
