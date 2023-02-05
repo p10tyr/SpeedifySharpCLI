@@ -10,6 +10,8 @@ public class StateEngine
     public SpeedifySession SpeedifySession { get; set; } = new();
     public SpeedifyState SpeedifyState { get; set; } = new();
 
+    public SpeedifyServerInfo SpeedifyConnectedServerInfo { get; set; } = new();
+
     public virtual void ReticulateSplines(string stateJson)
     {
         var matches = Regex.Matches(stateJson, @"\[""(.*?)\]\r", RegexOptions.Singleline);
@@ -35,5 +37,10 @@ public class StateEngine
                 SpeedifyAdapters = SpeedifyAdapters.Parse(s);
             }
         }
+    }
+
+    public virtual void SetConnectState(string connectJson)
+    {
+        SpeedifyConnectedServerInfo = SpeedifyServerInfo.Parse(connectJson);
     }
 }
